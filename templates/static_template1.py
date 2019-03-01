@@ -1,28 +1,12 @@
-kwargs = {'navbra': '/navbar/',
-          'home': '/',
-          'about': '/about/',
-          'services': '/services/',
-          'contact': '/contact/',
-          }
+default_kwargs = {'navbar': '/navbar/',
+                  'home': '/',
+                  'about': '/about/',
+                  'services': '/services/',
+                  'contact': '/contact/',
+                  }
+
 
 html = """
-Skip to content
-
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- @sajid1189 Sign out
-16
-141 290 BlackrockDigital/startbootstrap-shop-homepage
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
-startbootstrap-shop-homepage/index.html
-@davidtmiller davidtmiller dependency update and gulp 4 update
-e6f2fe1  29 days ago
-222 lines (191 sloc)  8.07 KB
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -104,6 +88,18 @@ e6f2fe1  29 days ago
 
 
         </div>
+        
+        
+        <!-- Space for Random Link -->
+         <!-- ------ ################################ -->
+         <!------------------------------------------------------------------------------->
+         
+         {random_links}
+         
+         <!-- ------ ################################ -->
+         
+         
+         
 
       </div>
       <!-- /.col-lg-3 -->

@@ -9,3 +9,4 @@ resources/vendors/**/
 venv/
 venv3/
 /distribute-*.tar.gz
+*.pyc
