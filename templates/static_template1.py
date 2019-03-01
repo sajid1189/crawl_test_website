@@ -1,11 +1,3 @@
-default_kwargs = {'navbar': '/navbar/',
-                  'home': '/',
-                  'about': '/about/',
-                  'services': '/services/',
-                  'contact': '/contact/',
-                  }
-
-
 html = """
 <!DOCTYPE html>
 <html lang="en">
