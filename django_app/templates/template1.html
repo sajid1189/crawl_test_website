@@ -22,26 +22,17 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="{navbar}">Start Bootstrap</a>
+      <a class="navbar-brand" href="/">Start Bootstrap</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{home}">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{about}">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{services}">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{contact}">Contact</a>
-          </li>
+            {% for menu_item in menu_items %}
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ menu_item.1 }}">{{ menu_item.0 }}</a>
+              </li>
+            {% endfor %}
         </ul>
       </div>
     </div>
@@ -56,28 +47,9 @@
 
         <h1 class="my-4">Shop Name</h1>
         <div class="list-group">
-          <a href="{0}" class="list-group-item">menu 1</a>
-          <a href="{1}" class="list-group-item">menu 2</a>
-          <a href="{2}" class="list-group-item">menu 3</a>
-          <a href="{3}" class="list-group-item">menu 4</a>
-          <a href="{4}" class="list-group-item">menu 5</a>
-          <a href="{5}" class="list-group-item">menu 6</a>
-          <a href="{6}" class="list-group-item">menu 7</a>
-          <a href="{7}" class="list-group-item">menu 8</a>
-          <a href="{8}" class="list-group-item">menu 9</a>
-          <a href="{9}" class="list-group-item">menu 10</a>
-          <a href="{10}" class="list-group-item">menu 11</a>
-          <a href="{11}" class="list-group-item">menu 12</a>
-          <a href="{12}" class="list-group-item">menu 13</a>
-          <a href="{13}" class="list-group-item">menu 14</a>
-          <a href="{14}" class="list-group-item">menu 15</a>
-          <a href="{15}" class="list-group-item">menu 16</a>
-          <a href="{16}" class="list-group-item">menu 17</a>
-          <a href="{17}" class="list-group-item">menu 18</a>
-          <a href="{18}" class="list-group-item">menu 19</a>
-          <a href="{19}" class="list-group-item">menu 20</a>
-
-
+            {% for link in links %}
+                <a href="{{ link.1 }}" class="list-group-item">{{ link.0 }}</a>
+            {% endfor %}
         </div>
         
         
@@ -88,9 +60,6 @@
          {random_links}
          
          <!-- ------ ################################ -->
-         
-         
-         
 
       </div>
       <!-- /.col-lg-3 -->
