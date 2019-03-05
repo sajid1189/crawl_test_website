@@ -12,15 +12,18 @@ class Command(BaseCommand):
         parser.add_argument('sizes', nargs='+', type=int)
 
     def handle(self, *args, **options):
-        kwargs = {'total_pages': options['sizes'][0]}
-        links_per_page = options['sizes'][1] if len(options['sizes'])> 1 else None
+        total_pages = options['sizes'][0]
+        kwargs = {'total_pages': total_pages}
+        links_per_page = options['sizes'][1] if len(options['sizes']) > 1 else None
         if links_per_page:
+            if links_per_page > total_pages:
+                raise ValueError("links per page cannot be greater than the number of pages.")
             kwargs.update({'links_per_page': links_per_page})
         site = Site.objects.create(**kwargs)
         site.current = True
         site.save()
 
-        connections = gen_adjacency_sparse_default(total_pages=kwargs.get('total_pages'), links_per_page=links_per_page)
+        connections = gen_adjacency_sparse_default(total_pages=total_pages, links_per_page=links_per_page)
 
         for page_index, links in connections.items():
             PageStructure.objects.create(
