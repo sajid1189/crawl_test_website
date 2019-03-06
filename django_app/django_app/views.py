@@ -1,8 +1,8 @@
-from django.http import HttpResponse
+import random
+
 from django.views.generic import TemplateView
 from django.contrib import messages
 
-from settings.constants import *
 from utils.links import link_maker, get_menu_links
 from.models import *
 
@@ -37,7 +37,8 @@ class Page(TemplateView):
         context.update(
             {
                 'links': links,
-                'menu_items': get_menu_links()
+                'menu_items': get_menu_links(),
+                'lorem_count': [i for i in range(1, (page_index % 50) + 1)]
             }
         )
         return context

@@ -46,9 +46,9 @@
               <div class="col-md-2"></div>
           </div>
       </div>
-      {% for i in i|rjust:20 %}
+      {% for i in lorem_count %}
           <div class="row">
-          <h2>Lorem text to enhance the page size</h2>
+          <h2>{{ i }}. Lorem text to enhance the page size</h2>
           {% include '_lorem_text.html' %}
           {% include '_lorem_text.html' %}
           {% include '_lorem_text.html' %}
