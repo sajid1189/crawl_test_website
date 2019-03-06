@@ -20,6 +20,7 @@ class Command(BaseCommand):
                 raise ValueError("links per page cannot be greater than the number of pages.")
             kwargs.update({'links_per_page': links_per_page})
         site = Site.objects.create(**kwargs)
+        Site.objects.all().update(current=False)
         site.current = True
         site.save()
 

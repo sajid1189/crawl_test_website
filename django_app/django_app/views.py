@@ -3,12 +3,20 @@ from django.views.generic import TemplateView
 from django.contrib import messages
 
 from settings.constants import *
-
+from utils.links import link_maker, get_menu_links
 from.models import *
 
 
 class Home(TemplateView):
     template_name = 'home.html'
+
+    def get_context_data(self, **kwargs):
+        first_page = PageStructure.objects.filter(site=Site.objects.filter(current=True).first()).first()
+        context = super(Home, self).get_context_data(**kwargs)
+        context.update({
+            'page': link_maker(first_page.id)
+        })
+        return context
 
 
 class Page(TemplateView):
@@ -24,12 +32,12 @@ class Page(TemplateView):
         ps = PageStructure.objects.get(site=current_site, page=page_index)
         links = json.loads(ps.links)
 
-        links = [("page {}".format(link), "/page/{}".format(link)) for link in links]
-        menu_items = [("menu {}".format(menu_item), "/page/{}".format(menu_item)) for menu_item in DEFAULT_MENU_PAGES]
+        links = [("page {}".format(link), link_maker(link)) for link in links]
+
         context.update(
             {
                 'links': links,
-                'menu_items': menu_items
+                'menu_items': get_menu_links()
             }
         )
         return context
