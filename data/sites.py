@@ -1,5 +1,12 @@
 import random
-from settings.constants import DATA_MAX_PAGES, DEFAULT_MENU_PAGES, DATA_MAX_LINKS_PER_PAGE, DATA_MIN_LINKS_PER_PAGE
+import os
+import sys
+
+sys.path.append(os.path.abspath('../settings/'))
+for p in sys.path:
+    print(p)
+
+from constants import DATA_MAX_PAGES, DEFAULT_MENU_PAGES, DATA_MAX_LINKS_PER_PAGE, DATA_MIN_LINKS_PER_PAGE
 
 
 class Site(object):

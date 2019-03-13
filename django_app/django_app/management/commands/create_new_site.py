@@ -1,9 +1,13 @@
 import json
+import os
+import sys
+
+sys.path.append(os.path.abspath('../data/'))
 
 from django.core.management.base import BaseCommand, CommandError
 
 from django_app.models import Site, PageStructure
-from data.sites import gen_adjacency_sparse_default
+from sites import gen_adjacency_sparse_default
 
 class Command(BaseCommand):
     help = 'Creates a new site with the given page size and links per page.'
