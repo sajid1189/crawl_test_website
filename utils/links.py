@@ -1,4 +1,11 @@
-from settings.constants import DEFAULT_MENU_PAGES
+import os
+import sys
+
+sys.path.append('../settings/')
+for p in sys.path:
+    print(p)
+
+from constants import DEFAULT_MENU_PAGES
 
 
 def link_maker(page_id):
