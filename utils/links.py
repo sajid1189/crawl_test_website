@@ -2,8 +2,6 @@ import os
 import sys
 
 sys.path.append('../settings/')
-for p in sys.path:
-    print(p)
 
 from constants import DEFAULT_MENU_PAGES
 
