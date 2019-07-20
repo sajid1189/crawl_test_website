@@ -12,3 +12,5 @@ venv3/
 *.pyc
 .vscode/launch.json
 .vscode/settings.json
+db.sqlite
+db.sqlite3

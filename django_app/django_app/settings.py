@@ -75,9 +75,17 @@ WSGI_APPLICATION = 'django_app.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'crawl_site',
+    #     'USER': 'test_user',
+    #     'PASSWORD': 'test123',
+    #     'HOST': 'localhost',
+    #     'PORT': '',
+    # },
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'crawl_site',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite',
         'USER': 'test_user',
         'PASSWORD': 'test123',
         'HOST': 'localhost',

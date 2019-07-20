@@ -4,7 +4,7 @@ import sys
 from django.views.generic import TemplateView
 from django.contrib import messages
 
-sys.path.append(os.path.abspath('../utils/'))
+sys.path.append(os.path.abspath('../'))
 
 from utils.links import link_maker, get_menu_links
 from.models import *
