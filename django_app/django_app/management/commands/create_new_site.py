@@ -4,13 +4,15 @@ import sys
 
 sys.path.append(os.path.abspath('../data/'))
 
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
 
 from django_app.models import Site, PageStructure
 from sites import gen_adjacency_sparse_default
 
+
 class Command(BaseCommand):
-    help = 'Creates a new site with the given page size and links per page.'
+    help = """Creates a new site with the given page size and links per page. Requires two positional arguments 'number 
+    of pages in the size' and 'number of links per page"""
 
     def add_arguments(self, parser):
         parser.add_argument('sizes', nargs='+', type=int)
