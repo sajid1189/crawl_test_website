@@ -6,7 +6,7 @@ from django.contrib import messages
 
 sys.path.append(os.path.abspath('../utils/'))
 
-from links import link_maker, get_menu_links
+from utils.links import link_maker, get_menu_links
 from.models import *
 
 

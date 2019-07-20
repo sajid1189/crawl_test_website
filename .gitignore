@@ -10,3 +10,5 @@ venv/
 venv3/
 /distribute-*.tar.gz
 *.pyc
+.vscode/launch.json
+.vscode/settings.json
