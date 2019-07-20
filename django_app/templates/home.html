@@ -1,5 +1,14 @@
 {% extends '_base.html' %}
 
 {% block content%}
-<a href="{{ page }}">First page of the site. Start your crawling from here</a>
+    <div class="container">
+        <div class="row1" style="text-align: center">
+            <h2>This is a Django powered website to test your crawling strategy</h2>
+            <h3>This website contains {{ total_pages }} and each page contains {{ min_links }} to {{ max_links }} links per page</h3>
+            <h4>
+                <a href="{{ page }}">The first link to start your crawling from</a>
+            </h4>
+        </div>
+    </div>
+
 {% endblock %}
